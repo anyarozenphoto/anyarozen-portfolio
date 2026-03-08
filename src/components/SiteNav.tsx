@@ -7,20 +7,17 @@ const SiteNav = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
+  // ✏️ To add a new page to the nav, just add a new object here:
   const links = [
     { to: "/", label: "Home" },
-    { to: "/gallery?category=portraits", label: "Portraits" },
+    { to: "/portraits", label: "Portraits" },
     { to: "/contact", label: "Contact" },
   ];
 
-  const isActive = (to: string) => {
-    if (to === "/") return location.pathname === "/";
-    return location.pathname + location.search === to || location.pathname === to.split("?")[0];
-  };
+  const isActive = (to: string) => location.pathname === to;
 
   return (
     <>
-      {/* Overlay to close menu on outside click */}
       {open && (
         <div
           className="fixed inset-0 z-40 md:hidden"
@@ -34,7 +31,6 @@ const SiteNav = () => {
             <img src={logo} alt="Anya Rozen" className="h-28 md:h-32 w-auto" />
           </Link>
 
-          {/* Desktop */}
           <div className="hidden md:flex items-center gap-10">
             {links.map((link) => (
               <Link
@@ -49,7 +45,6 @@ const SiteNav = () => {
             ))}
           </div>
 
-          {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-foreground"
@@ -59,7 +54,6 @@ const SiteNav = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {open && (
           <div className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-5">
             {links.map((link) => (

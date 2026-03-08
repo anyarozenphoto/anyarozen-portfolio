@@ -1,16 +1,12 @@
-import { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
-import { getCategory } from "@/data/photos";
+import { useState } from "react";
+import { photos } from "@/data/photos";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import Lightbox from "@/components/Lightbox";
 
-const Gallery = () => {
-  const [searchParams] = useSearchParams();
-  const category = searchParams.get("category") || "portraits";
-  const images = useMemo(() => getCategory(category), [category]);
+const Portraits = () => {
   const ref = useFadeIn();
-
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const images = photos.portraits;
 
   return (
     <div ref={ref} className="pt-24 pb-16 px-3 md:px-6 min-h-screen">
@@ -44,4 +40,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Portraits;
