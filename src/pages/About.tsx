@@ -11,6 +11,12 @@ const About = () => {
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-6 md:px-12 min-h-screen">
       <div className="fade-in-section max-w-2xl mx-auto">
+        <img
+          src="https://p-lux3.pcloud.com/DLZQgy7HV7ZdsjHox7Ztbnx7ZZUUSX5kZNVZZ7T0ZZYTV7ZTmZ7LZd4ZGOxynUSe2q81s6NuedlnQfv6GNdX/anya-rozen-self-camera-purple.jpg"
+          alt="Anya Rozen"
+          className="w-full max-w-md mx-auto mb-10 object-cover"
+        />
+
         {/* ✏️ EDIT YOUR BIO TEXT BELOW */}
         <div className="space-y-4 text-foreground/80 text-sm leading-relaxed tracking-wide">
           <p>
