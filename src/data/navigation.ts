@@ -24,8 +24,8 @@ export const navigation: NavItem[] = [
   { to: "/", label: "Home", hidden: false, isPage: true },
   { to: "/portraits", label: "Portraits", photosKey: "portraits", hidden: false },
   { to: "/maternity", label: "Maternity", photosKey: "maternity", hidden: false },
-  { to: "/families", label: "Families", photosKey: "families", hidden: false },
+  { to: "/families", label: "Families", photosKey: "families", hidden: true },
   { to: "/lifestyle", label: "Lifestyle", photosKey: "lifestyle", hidden: false },
-  { to: "/about", label: "About", hidden: false, isPage: true },
+  { to: "/about", label: "About", hidden: true, isPage: true },
   { to: "/contact", label: "Contact", hidden: false, isPage: true },
 ];
