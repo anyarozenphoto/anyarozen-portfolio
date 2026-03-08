@@ -12,14 +12,14 @@ const SiteFooter = () => {
           <a href="mailto:anyarozenphoto@gmail.com" className="hover:underline">anyarozenphoto@gmail.com</a>
         </p>
         <div className="flex items-center gap-5">
-          <a href="https://www.facebook.com/profile.php?id=100055054287871" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Facebook">
-            <Facebook size={22} />
+          <a href="https://www.facebook.com/profile.php?id=100055054287871" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-primary-foreground/40 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground hover:border-primary-foreground transition-colors" aria-label="Facebook">
+            <Facebook size={18} />
           </a>
-          <a href="https://www.instagram.com/anyarozen.space/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Instagram">
-            <Instagram size={22} />
+          <a href="https://www.instagram.com/anyarozen.space/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-primary-foreground/40 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground hover:border-primary-foreground transition-colors" aria-label="Instagram">
+            <Instagram size={18} />
           </a>
-          <a href="https://wa.me/972545325540" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="WhatsApp">
-            <MessageCircle size={22} />
+          <a href="https://wa.me/972545325540" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-primary-foreground/40 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground hover:border-primary-foreground transition-colors" aria-label="WhatsApp">
+            <MessageCircle size={18} />
           </a>
         </div>
       </div>
