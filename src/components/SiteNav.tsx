@@ -19,41 +19,48 @@ const SiteNav = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-6 md:px-12 py-5">
-        <Link to="/">
-          <img src={logo} alt="Anya Rozen" className="h-20 md:h-24 w-auto" />
-        </Link>
+    <>
+      {/* Overlay to close menu on outside click */}
+      {open && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-10">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`font-sans text-xs tracking-[0.2em] uppercase transition-opacity ${
-                isActive(link.to) ? "opacity-100" : "opacity-50 hover:opacity-80"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
+        <div className="flex items-center justify-between px-6 md:px-12 py-5">
+          <Link to="/" onClick={() => setOpen(false)}>
+            <img src={logo} alt="Anya Rozen" className="h-20 md:h-24 w-auto" />
+          </Link>
+
+          {/* Desktop */}
+          <div className="hidden md:flex items-center gap-10">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`font-sans text-xs tracking-[0.2em] uppercase transition-opacity ${
+                  isActive(link.to) ? "opacity-100" : "opacity-50 hover:opacity-80"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-foreground"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile overlay + menu */}
-      {open && (
-        <>
-          <div className="fixed inset-0 z-[-1] md:hidden" onClick={() => setOpen(false)} />
+        {/* Mobile menu */}
+        {open && (
           <div className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-5">
             {links.map((link) => (
               <Link
@@ -66,9 +73,9 @@ const SiteNav = () => {
               </Link>
             ))}
           </div>
-        </>
-      )}
-    </nav>
+        )}
+      </nav>
+    </>
   );
 };
 
