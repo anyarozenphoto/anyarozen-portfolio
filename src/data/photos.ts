@@ -6,8 +6,8 @@
 // 1. Add a new array below (e.g. "landscapes: [...]")
 // 2. Create a new page file in src/pages/ (copy Portraits.tsx as a template)
 // 3. Add a <Route> in src/App.tsx
-// 4. Add a nav link in src/components/SiteNav.tsx
-// 5. Add a category card on the Home page in src/pages/Index.tsx
+// 4. Add a nav link in src/data/navigation.ts (set hidden: false)
+// 5. Add a category card in src/pages/Index.tsx
 //
 // Each page has its own array of image URLs.
 // The "home" page has a "hero" — the big fullscreen image at the top.
@@ -15,6 +15,18 @@
 export const photos = {
   /** Fullscreen hero image on the home page */
   hero: "https://p-lux3.pcloud.com/DLZASgIpV7Z5l9Ucx7Ztbnx7ZZ55hX5kZNVZZ7T0ZZCtFHZU4ZhmZRmZHVEa3xYuEDzEKBCnJivNdVS9pCY7/bridge-%D1%81alatrava-lights-night-israel.jpg",
+
+  /** Images for the Portraits page */
+  portraits: [
+    "https://p-lux2.pcloud.com/DLZ8covpV7ZXXRyox7Ztbnx7ZZ0ehX5kZNVZZ7T0ZZQTskZw4ZsYZ5QZN2nmYNGMwDBQOi1rIUTwCzUCAXDV/mirror-reflection-red-dress-portrait-serene.jpg",
+    "https://p-lux4.pcloud.com/DLZ1wIvpV7ZonNocx7Ztbnx7ZZbehX5kZNVZZ7T0ZZHhnXZKQZkFZETZptIYPDxLf7uqkeaW5NtL4kLwjlz7/reflection-portrait-dual-color-artistic.jpg",
+  ],
+
+  /** Images for the Maternity page — add URLs here */
+  maternity: [] as string[],
+
+  /** Images for the Families page — add URLs here */
+  families: [] as string[],
 
   /** Images for the Lifestyle page */
   lifestyle: [
@@ -29,11 +41,5 @@ export const photos = {
     "https://p-lux2.pcloud.com/DLZ2tgIpV7ZjhMUcx7Ztbnx7ZZ2YhX5kZNVZZ7T0ZZAK0VZGFZfYZNmZI3dIcOgE0cz0q7c1YbAaeRvozRhy/street-night-sky-tel-aviv.jpg",
     "https://p-lux4.pcloud.com/DLZKdgIpV7ZFmMUcx7Ztbnx7ZZhmhX5kZNVZZ7T0ZZaqmJZN4Z4YZ18ZKfRuyEOoPLJVC2XEnk2IRyRqXxf7/tel-aviv-pink-glass.jpg",
     "https://p-lux3.pcloud.com/DLZf6gIpV7ZDSMUcx7Ztbnx7ZZCmhX5kZNVZZ7T0ZZyVX7ZPmZcYZVLZE5dT862qG4uIcVUuzqRo9yvMYkHX/two-falcons-street-light.JPEG",
-  ],
-
-  /** Images for the Portraits page */
-  portraits: [
-    "https://p-lux2.pcloud.com/DLZ8covpV7ZXXRyox7Ztbnx7ZZ0ehX5kZNVZZ7T0ZZQTskZw4ZsYZ5QZN2nmYNGMwDBQOi1rIUTwCzUCAXDV/mirror-reflection-red-dress-portrait-serene.jpg",
-    "https://p-lux4.pcloud.com/DLZ1wIvpV7ZonNocx7Ztbnx7ZZbehX5kZNVZZ7T0ZZHhnXZKQZkFZETZptIYPDxLf7uqkeaW5NtL4kLwjlz7/reflection-portrait-dual-color-artistic.jpg",
   ],
 };
