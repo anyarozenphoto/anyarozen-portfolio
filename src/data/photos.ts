@@ -23,7 +23,13 @@ export const photos = {
   ],
 
   /** Images for the Maternity page — add URLs here */
-  maternity: [] as string[],
+  maternity: [
+    "https://p-lux3.pcloud.com/DLZLNAXHV7Z1G18ox7Ztbnx7ZZ49jX5kZNVZZ7T0ZZgwdkZipZzmZe4ZIgwPVonaX65mQUPtiqOI0jm5gaVk/pregnancy-gypsophila-bouquet-tender-portrait.jpg",
+    "https://p-lux3.pcloud.com/DLZvEAXHV7Z7U18ox7Ztbnx7ZZy9jX5kZNVZZ7T0ZZo2U7ZwmZ5RZv4ZQB4RpHujK1LlFR3eXHWF38VQgUBV/pregnancy-glowing-serene-portrait-bokeh-lights.jpg",
+    "https://p-lux2.pcloud.com/DLZvGAXHV7ZJye8ox7Ztbnx7ZZi9jX5kZNVZZ7T0ZZTyy0ZWQZNQZiRZfPcgE3M6oNfN8O3zIh4BKVDT2O5X/pregnancy-sunflower-bouquet-portrait-serene.jpg",
+    "https://p-lux1.pcloud.com/DLZ4NAXHV7ZTG18ox7Ztbnx7ZZD9jX5kZNVZZ7T0ZZWCnZIYZuQZvLZ5z7uxcWEhVY0XE3ufDeUNLqWTlMV/pregnancy-silhouette-artistic-portrait-dramatic-lighting.jpg",
+    "https://p-lux1.pcloud.com/DLZmiAXHV7ZC7e8ox7Ztbnx7ZZt9jX5kZNVZZ7T0ZZaJ9ZULZERZXzZkGV4XSspq5VsC19A8kdFLRII8vr",
+  ],
 
   /** Images for the Families page — add URLs here */
   families: [] as string[],
