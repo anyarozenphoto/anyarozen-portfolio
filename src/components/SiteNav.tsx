@@ -50,20 +50,23 @@ const SiteNav = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile overlay + menu */}
       {open && (
-        <div className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-5">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setOpen(false)}
-              className="font-sans text-sm tracking-[0.15em] uppercase text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+        <>
+          <div className="fixed inset-0 z-[-1] md:hidden" onClick={() => setOpen(false)} />
+          <div className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-5">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className="font-sans text-sm tracking-[0.15em] uppercase text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     </nav>
   );
