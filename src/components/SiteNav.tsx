@@ -7,7 +7,6 @@ const SiteNav = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
-  // ✏️ To add a new page to the nav, just add a new object here:
   const links = [
     { to: "/", label: "Home" },
     { to: "/portraits", label: "Portraits" },
@@ -26,12 +25,12 @@ const SiteNav = () => {
       )}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-6 md:px-12 py-5">
+        <div className="flex items-center justify-between px-5 md:px-10 py-3">
           <Link to="/" onClick={() => setOpen(false)}>
-            <img src={logo} alt="Anya Rozen" className="h-28 md:h-32 w-auto" />
+            <img src={logo} alt="Anya Rozen" className="h-14 md:h-16 w-auto" />
           </Link>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
                 key={link.to}
@@ -45,17 +44,26 @@ const SiteNav = () => {
             ))}
           </div>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-foreground"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile: show Contact always + hamburger */}
+          <div className="flex md:hidden items-center gap-4">
+            <Link
+              to="/contact"
+              className="font-sans text-xs tracking-[0.15em] uppercase text-foreground/70"
+            >
+              Contact
+            </Link>
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-foreground"
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
 
         {open && (
-          <div className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-5">
+          <div className="md:hidden bg-background border-t border-border px-5 py-5 flex flex-col gap-4">
             {links.map((link) => (
               <Link
                 key={link.to}
