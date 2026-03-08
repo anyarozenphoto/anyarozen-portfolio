@@ -38,6 +38,7 @@ export const photos = {
 
   /** Images for the Lifestyle page */
   lifestyle: [
+    "https://p-lux1.pcloud.com/DLZikn0HV7ZSo8mox7Ztbnx7ZZPajX5kZNVZZ7T0ZZxGckZy9Ze4ZzQZmWLXjTu7CKu8HLiQLA6as7FRmlpX/black-and-white-plant-texture-contrast-photography.jpg",
     "https://p-lux4.pcloud.com/DLZKugIpV7ZTq9Ucx7Ztbnx7ZZA5hX5kZNVZZ7T0ZZsV0kZ2YZAmZDLZRpm20FQbWDYQlr7yg2iBeQtwjpxk/cafe-summer-mood-limonade-glare.jpg",
     "https://p-lux1.pcloud.com/DLZ8nMIpV7ZL41Ucx7Ztbnx7ZZw8hX5kZNVZZ7T0ZZS6hkZIFZA8Z3QZcYBFscb6pfQ6NMqYxO5mFHSognJV/dead-sea-road-judean-desert-landscape.JPEG",
     "https://p-lux2.pcloud.com/DLZj9MIpV7Zi81Ucx7Ztbnx7ZZXQhX5kZNVZZ7T0ZZFvBJZlHZ4zZiQZnEpy6zYzt8yKWAYG9q9tF0xpnupX/haifa-botanica-rooftop.JPEG",
