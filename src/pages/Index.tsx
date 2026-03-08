@@ -40,7 +40,7 @@ const Index = () => {
                 />
                 <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-end p-6 md:p-10">
-                  <h2 className="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-white">
+                  <h2 className="font-sans text-sm md:text-base tracking-[0.1em] uppercase text-white">
                     {card.label}
                   </h2>
                 </div>
