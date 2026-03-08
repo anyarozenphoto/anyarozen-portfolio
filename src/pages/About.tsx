@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 // =============================================
@@ -10,10 +11,6 @@ const About = () => {
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-6 md:px-12 min-h-screen">
       <div className="fade-in-section max-w-2xl mx-auto">
-        <h1 className="font-sans text-sm tracking-[0.25em] uppercase text-foreground mb-8">
-          About
-        </h1>
-
         {/* ✏️ EDIT YOUR BIO TEXT BELOW */}
         <div className="space-y-4 text-foreground/80 text-sm leading-relaxed tracking-wide">
           <p>
@@ -33,6 +30,15 @@ const About = () => {
           </p>
         </div>
         {/* ✏️ END BIO TEXT */}
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/portraits"
+            className="inline-block font-sans text-[11px] tracking-[0.2em] uppercase text-foreground/70 border border-foreground/20 px-6 py-3 hover:bg-foreground/5 transition-colors"
+          >
+            View My Portfolio
+          </Link>
+        </div>
       </div>
     </div>
   );
