@@ -18,6 +18,8 @@ export const photos = {
 
   /** Images for the Portraits page */
   portraits: [
+    "https://p-lux2.pcloud.com/DLZOPL0HV7Zyk6Yox7Ztbnx7ZZqUjX5kZNVZZ7T0ZZdrvkZwRZPmZQQZLmGG6UcAzb5q2yoNwBjwYFtXP2Ay/sunlit-window-portrait-warm-glow-playful.jpg",
+    "https://p-lux1.pcloud.com/DLZw3L0HV7Z0e6Yox7Ztbnx7ZZoUjX5kZNVZZ7T0ZZb95kZ5LZMQZaYZVDT11w7pUIuM6JAuHcDGCbMONDny/black-and-white-portrait-smiling-woman-natural-light.jpg",
     "https://p-lux2.pcloud.com/DLZ8covpV7ZXXRyox7Ztbnx7ZZ0ehX5kZNVZZ7T0ZZQTskZw4ZsYZ5QZN2nmYNGMwDBQOi1rIUTwCzUCAXDV/mirror-reflection-red-dress-portrait-serene.jpg",
     "https://p-lux4.pcloud.com/DLZ1wIvpV7ZonNocx7Ztbnx7ZZbehX5kZNVZZ7T0ZZHhnXZKQZkFZETZptIYPDxLf7uqkeaW5NtL4kLwjlz7/reflection-portrait-dual-color-artistic.jpg",
   ],
