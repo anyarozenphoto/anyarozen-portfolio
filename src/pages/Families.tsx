@@ -9,7 +9,7 @@ const Families = () => {
   const images = photos.families;
 
   return (
-    <div ref={ref} className="pt-24 pb-16 px-3 md:px-6 min-h-screen">
+    <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
       {images.length === 0 ? (
         <div className="flex items-center justify-center h-[60vh]">
           <p className="font-sans text-sm tracking-[0.15em] uppercase text-foreground/40">
