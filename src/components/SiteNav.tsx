@@ -9,6 +9,7 @@ const SiteNav = () => {
 
   const links = [
     { to: "/", label: "Home" },
+    { to: "/lifestyle", label: "Lifestyle" },
     { to: "/portraits", label: "Portraits" },
     { to: "/contact", label: "Contact" },
   ];

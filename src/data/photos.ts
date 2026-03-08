@@ -7,16 +7,17 @@
 // 2. Create a new page file in src/pages/ (copy Portraits.tsx as a template)
 // 3. Add a <Route> in src/App.tsx
 // 4. Add a nav link in src/components/SiteNav.tsx
+// 5. Add a category card on the Home page in src/pages/Index.tsx
 //
 // Each page has its own array of image URLs.
-// The "home" page also has a "hero" — the big fullscreen image at the top.
+// The "home" page has a "hero" — the big fullscreen image at the top.
 
 export const photos = {
   /** Fullscreen hero image on the home page */
   hero: "https://p-lux3.pcloud.com/DLZASgIpV7Z5l9Ucx7Ztbnx7ZZ55hX5kZNVZZ7T0ZZCtFHZU4ZhmZRmZHVEa3xYuEDzEKBCnJivNdVS9pCY7/bridge-%D1%81alatrava-lights-night-israel.jpg",
 
-  /** Grid images shown on the Home page below the hero */
-  home: [
+  /** Images for the Lifestyle page */
+  lifestyle: [
     "https://p-lux4.pcloud.com/DLZKugIpV7ZTq9Ucx7Ztbnx7ZZA5hX5kZNVZZ7T0ZZsV0kZ2YZAmZDLZRpm20FQbWDYQlr7yg2iBeQtwjpxk/cafe-summer-mood-limonade-glare.jpg",
     "https://p-lux1.pcloud.com/DLZ8nMIpV7ZL41Ucx7Ztbnx7ZZw8hX5kZNVZZ7T0ZZS6hkZIFZA8Z3QZcYBFscb6pfQ6NMqYxO5mFHSognJV/dead-sea-road-judean-desert-landscape.JPEG",
     "https://p-lux2.pcloud.com/DLZj9MIpV7Zi81Ucx7Ztbnx7ZZXQhX5kZNVZZ7T0ZZFvBJZlHZ4zZiQZnEpy6zYzt8yKWAYG9q9tF0xpnupX/haifa-botanica-rooftop.JPEG",

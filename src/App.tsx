@@ -3,6 +3,7 @@ import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
 import Index from "./pages/Index";
 import Portraits from "./pages/Portraits";
+import Lifestyle from "./pages/Lifestyle";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -13,6 +14,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/portraits" element={<Portraits />} />
+        <Route path="/lifestyle" element={<Lifestyle />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
