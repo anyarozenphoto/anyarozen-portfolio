@@ -19,7 +19,7 @@ const SiteFooter = () => {
             <Instagram size={16} />
           </a>
           <a href="https://wa.me/972545325540" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="WhatsApp">
-            <MessageCircle size={16} />
+            <Phone size={16} />
           </a>
         </div>
       </div>
