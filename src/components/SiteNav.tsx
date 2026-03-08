@@ -21,23 +21,25 @@ const SiteNav = () => {
       )}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-        {/* Mobile header */}
-        <div className="flex md:hidden items-end justify-between px-4 pt-2 pb-3">
+        {/* Mobile header — sandwich & contact align to bottom of logo */}
+        <div className="relative md:hidden px-4 py-2">
+          <Link to="/" onClick={() => setOpen(false)} className="flex justify-center">
+            <img src={logo} alt="Anya Rozen" className="h-11 w-auto object-contain" />
+          </Link>
+
+          {/* Left: menu button, pinned to bottom of container */}
           <button
             onClick={() => setOpen(!open)}
-            className="text-foreground w-10 pb-0.5"
+            className="absolute left-4 bottom-2 text-foreground"
             aria-label="Toggle menu"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
 
-          <Link to="/" onClick={() => setOpen(false)} className="absolute left-1/2 -translate-x-1/2 top-1">
-            <img src={logo} alt="Anya Rozen" className="h-11 w-auto object-contain" />
-          </Link>
-
+          {/* Right: contact link, pinned to bottom of container */}
           <Link
             to="/contact"
-            className="font-sans text-[10px] tracking-[0.15em] uppercase text-foreground/70 pb-0.5"
+            className="absolute right-4 bottom-2.5 font-sans text-[10px] tracking-[0.15em] uppercase text-foreground/70"
           >
             Contact
           </Link>
