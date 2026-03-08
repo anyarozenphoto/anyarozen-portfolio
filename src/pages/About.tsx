@@ -8,7 +8,7 @@ const About = () => {
   const ref = useFadeIn();
 
   return (
-    <div ref={ref} className="pt-24 pb-16 px-6 md:px-12 min-h-screen">
+    <div ref={ref} className="pt-16 md:pt-24 pb-16 px-6 md:px-12 min-h-screen">
       <div className="fade-in-section max-w-2xl mx-auto">
         <h1 className="font-sans text-sm tracking-[0.25em] uppercase text-foreground mb-8">
           About
