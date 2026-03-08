@@ -25,17 +25,39 @@ const SiteNav = () => {
       )}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-5 md:px-10 py-3">
-          <Link to="/" onClick={() => setOpen(false)}>
-            <img src={logo} alt="Anya Rozen" className="h-14 md:h-16 w-auto" />
+        {/* Mobile header */}
+        <div className="flex md:hidden items-center justify-between px-4 py-3">
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-foreground w-10"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+
+          <Link to="/" onClick={() => setOpen(false)} className="absolute left-1/2 -translate-x-1/2">
+            <img src={logo} alt="Anya Rozen" className="h-12 w-auto" />
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <Link
+            to="/contact"
+            className="font-sans text-[10px] tracking-[0.15em] uppercase text-foreground/70"
+          >
+            Contact
+          </Link>
+        </div>
+
+        {/* Desktop/Tablet header */}
+        <div className="hidden md:flex flex-col items-center py-4">
+          <Link to="/">
+            <img src={logo} alt="Anya Rozen" className="h-14 w-auto" />
+          </Link>
+          <div className="flex items-center gap-8 mt-2">
             {links.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-sans text-xs tracking-[0.2em] uppercase transition-opacity ${
+                className={`font-sans text-[11px] tracking-[0.2em] uppercase transition-opacity ${
                   isActive(link.to) ? "opacity-100" : "opacity-50 hover:opacity-80"
                 }`}
               >
@@ -43,25 +65,9 @@ const SiteNav = () => {
               </Link>
             ))}
           </div>
-
-          {/* Mobile: show Contact always + hamburger */}
-          <div className="flex md:hidden items-center gap-4">
-            <Link
-              to="/contact"
-              className="font-sans text-xs tracking-[0.15em] uppercase text-foreground/70"
-            >
-              Contact
-            </Link>
-            <button
-              onClick={() => setOpen(!open)}
-              className="text-foreground"
-              aria-label="Toggle menu"
-            >
-              {open ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
         </div>
 
+        {/* Mobile menu dropdown */}
         {open && (
           <div className="md:hidden bg-background border-t border-border px-5 py-5 flex flex-col gap-4">
             {links.map((link) => (
