@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const SiteNav = () => {
   const location = useLocation();
@@ -20,8 +21,8 @@ const SiteNav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 md:px-12 py-5">
-        <Link to="/" className="font-serif text-2xl md:text-3xl font-light tracking-wide text-foreground">
-          Anya Rozen
+        <Link to="/">
+          <img src={logo} alt="Anya Rozen" className="h-8 md:h-10 w-auto" />
         </Link>
 
         {/* Desktop */}
