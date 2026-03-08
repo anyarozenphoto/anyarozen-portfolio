@@ -10,17 +10,17 @@ const Portraits = () => {
 
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
-      <div className="fade-in-section max-w-[1600px] mx-auto columns-2 md:columns-3 lg:columns-4 gap-1">
+      <div className="fade-in-section max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
         {images.map((src, i) => (
           <div
             key={i}
-            className="mb-1 break-inside-avoid cursor-pointer overflow-hidden group"
+            className="cursor-pointer overflow-hidden group"
             onClick={() => setLightboxIndex(i)}
           >
             <img
               src={src}
               alt=""
-              className="w-full block transition-transform duration-700 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               loading="lazy"
             />
           </div>
