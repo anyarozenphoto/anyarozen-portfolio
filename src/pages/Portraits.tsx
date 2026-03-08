@@ -9,7 +9,7 @@ const Portraits = () => {
   const images = photos.portraits;
 
   return (
-    <div ref={ref} className="pt-24 pb-16 px-3 md:px-6 min-h-screen">
+    <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
       <div className="fade-in-section max-w-[1600px] mx-auto columns-2 md:columns-3 lg:columns-4 gap-1">
         {images.map((src, i) => (
           <div
