@@ -1,5 +1,5 @@
 import { Instagram, Facebook } from "lucide-react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 const SiteFooter = () => {
   return (
