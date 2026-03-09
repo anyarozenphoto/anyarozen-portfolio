@@ -3,7 +3,7 @@
     var l = window.location;
     var path = l.pathname.replace(/^\/anyarozen-portfolio/, "");
     var newUrl =
-      l.protocol + "//" + l.host + "/anyarozen-portfolio/#" + path + l.search;
+      l.protocol + "//" + l.host + "/anyarozen-portfolio/" + "?" + "redirect=" + encodeURIComponent(path + l.search);
     window.location.replace(newUrl);
   })();
 </script>
