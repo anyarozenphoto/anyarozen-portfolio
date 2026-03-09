@@ -10,7 +10,7 @@ interface LightboxProps {
 }
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) => {
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [fadeKey, setFadeKey] = useState(0);
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -22,9 +22,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
   );
 
   useEffect(() => {
-    setIsTransitioning(true);
-    const timer = setTimeout(() => setIsTransitioning(false), 50);
-    return () => clearTimeout(timer);
+    setFadeKey(prev => prev + 1);
   }, [currentIndex]);
 
   useEffect(() => {
@@ -66,10 +64,11 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
       )}
 
       <img
+        key={fadeKey}
         src={images[currentIndex]}
         alt=""
         onClick={(e) => e.stopPropagation()}
-        className={`select-none transition-opacity duration-200 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+        className="select-none animate-fade-in"
       />
     </div>
   );
