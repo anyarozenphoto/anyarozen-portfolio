@@ -20,6 +20,7 @@ export const photos = {
 
   /** Images for the Portraits page */
   portraits: [
+    `https://lh3.googleusercontent.com/pw/AP1GczPjt4ZywrP4KLtcVZDoOgsKTkW7o_L_6ODwciBl-ROV3cE_EeaLWoc_prTFWelt84-hvtEki3M5AZ-FOXXlaXKpFGGcE7YvJ5BLyPp1nBcalYBi1XtvnxIPXlYmUmzlIJl4CQMTlELxD3ZWT6goV4PU=w822-h1241-s-no-gm?authuser=1`,
     `https://p-lux2.pcloud.com/DLZsyF5HV7Zyk6Yox7Ztbnx7ZZ17uX5kZNVZZ7T0ZZSbCXZ9zZwLZPRZV0tVhuBQepuOeJkPmktkJ83Azpz7/sunlit-window-portrait-warm-glow-playful.jpg${v}`,
     `https://p-lux1.pcloud.com/DLZw3L0HV7Z0e6Yox7Ztbnx7ZZoUjX5kZNVZZ7T0ZZb95kZ5LZMQZaYZVDT11w7pUIuM6JAuHcDGCbMONDny/black-and-white-portrait-smiling-woman-natural-light.jpg${v}`,
     `https://p-lux2.pcloud.com/DLZ8covpV7ZXXRyox7Ztbnx7ZZ0ehX5kZNVZZ7T0ZZQTskZw4ZsYZ5QZN2nmYNGMwDBQOi1rIUTwCzUCAXDV/mirror-reflection-red-dress-portrait-serene.jpg${v}`,
