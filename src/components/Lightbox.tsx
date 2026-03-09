@@ -10,7 +10,7 @@ interface LightboxProps {
 }
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) => {
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [fadeKey, setFadeKey] = useState(0);
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -22,9 +22,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
   );
 
   useEffect(() => {
-    setIsTransitioning(true);
-    const timer = setTimeout(() => setIsTransitioning(false), 50);
-    return () => clearTimeout(timer);
+    setFadeKey(prev => prev + 1);
   }, [currentIndex]);
 
   useEffect(() => {
