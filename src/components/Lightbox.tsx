@@ -48,14 +48,14 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         <>
           <button
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
-            className="absolute left-0 top-0 h-full w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
+            className="absolute left-0 top-20 h-[calc(100%-5rem)] w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
             aria-label="Previous"
           >
             <ChevronLeft size={40} />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); onNext(); }}
-            className="absolute right-0 top-0 h-full w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
+            className="absolute right-0 top-20 h-[calc(100%-5rem)] w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
             aria-label="Next"
           >
             <ChevronRight size={40} />
