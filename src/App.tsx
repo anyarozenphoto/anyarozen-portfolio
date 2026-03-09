@@ -1,4 +1,5 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+// src/App.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
 import Index from "./pages/Index";
@@ -11,7 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
-  <HashRouter>
+  <BrowserRouter basename="/anyarozen-portfolio">
     <SiteNav />
     <main>
       <Routes>
@@ -26,7 +27,7 @@ const App = () => (
       </Routes>
     </main>
     <SiteFooter />
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default App;
