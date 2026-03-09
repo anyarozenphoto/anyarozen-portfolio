@@ -26,9 +26,9 @@ export const photos = {
   maternity: [
     `${import.meta.env.BASE_URL}images/maternity/pregnancy-glowing-serene-portrait-bokeh-lights.webp`,
     `${import.meta.env.BASE_URL}images/maternity/pregnancy-gypsophila-bouquet-tender-portrait.webp`,
+    `${import.meta.env.BASE_URL}images/maternity/pregnancy-sunflower-bouquet-portrait-serene.webp`,
     `${import.meta.env.BASE_URL}images/maternity/pregnancy-silhouette-artistic-portrait-dramatic-lighting.webp`,
     `${import.meta.env.BASE_URL}images/maternity/pregnancy-silhouette-black-and-white-artistic-portrait.webp`,
-    `${import.meta.env.BASE_URL}images/maternity/pregnancy-sunflower-bouquet-portrait-serene.webp`,
   ],
 
   /** Images for the Lifestyle page */
