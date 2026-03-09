@@ -10,6 +10,8 @@ interface LightboxProps {
 }
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -18,6 +20,12 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
     },
     [onClose, onPrev, onNext]
   );
+
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 50);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKey);
