@@ -16,7 +16,7 @@ const v = "?v=20260308";
 
 export const photos = {
   /** Fullscreen hero image on the home page */
-  hero: `https://p-lux3.pcloud.com/DLZASgIpV7Z5l9Ucx7Ztbnx7ZZ55hX5kZNVZZ7T0ZZCtFHZU4ZhmZRmZHVEa3xYuEDzEKBCnJivNdVS9pCY7/bridge-%D1%81alatrava-lights-night-israel.jpg${v}`,
+  hero: `/images/lifestyle/bridge-calatrava-lights-night-israel.webp`,
 
   /** Images for the Portraits page */
   portraits: [
