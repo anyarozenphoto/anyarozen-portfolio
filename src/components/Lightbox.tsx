@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface LightboxProps {
