@@ -20,11 +20,11 @@ export const photos = {
 
   /** Images for the Portraits page */
   portraits: [
+    `https://lh3.googleusercontent.com/pw/AP1GczNLK-gi73snih1uHcWmJM4iDveaHEFNG9WacI5xs44e3qtCLXJ16lYVYtsHDNJpPzIbbjCIxiTl0h-119Tp4uy-PIcXZkHyMz-FdfVHZH7ZXdt00CMUknTLm3_RiLL9WKZf-iUKgByw_orxOe6PKIIl=w1862-h1241-s-no-gm?authuser=1`,
     `https://lh3.googleusercontent.com/pw/AP1GczPjt4ZywrP4KLtcVZDoOgsKTkW7o_L_6ODwciBl-ROV3cE_EeaLWoc_prTFWelt84-hvtEki3M5AZ-FOXXlaXKpFGGcE7YvJ5BLyPp1nBcalYBi1XtvnxIPXlYmUmzlIJl4CQMTlELxD3ZWT6goV4PU=w822-h1241-s-no-gm?authuser=1`,
-    `https://p-lux2.pcloud.com/DLZsyF5HV7Zyk6Yox7Ztbnx7ZZ17uX5kZNVZZ7T0ZZSbCXZ9zZwLZPRZV0tVhuBQepuOeJkPmktkJ83Azpz7/sunlit-window-portrait-warm-glow-playful.jpg${v}`,
-    `https://p-lux1.pcloud.com/DLZw3L0HV7Z0e6Yox7Ztbnx7ZZoUjX5kZNVZZ7T0ZZb95kZ5LZMQZaYZVDT11w7pUIuM6JAuHcDGCbMONDny/black-and-white-portrait-smiling-woman-natural-light.jpg${v}`,
-    `https://p-lux2.pcloud.com/DLZ8covpV7ZXXRyox7Ztbnx7ZZ0ehX5kZNVZZ7T0ZZQTskZw4ZsYZ5QZN2nmYNGMwDBQOi1rIUTwCzUCAXDV/mirror-reflection-red-dress-portrait-serene.jpg${v}`,
-    `https://p-lux4.pcloud.com/DLZ1wIvpV7ZonNocx7Ztbnx7ZZbehX5kZNVZZ7T0ZZHhnXZKQZkFZETZptIYPDxLf7uqkeaW5NtL4kLwjlz7/reflection-portrait-dual-color-artistic.jpg${v}`,
+    `https://lh3.googleusercontent.com/pw/AP1GczN5mkPB8hMWC4fbp_4Sj3m9qh3nzIu81kYbrRskCBFFT3gj4J6uvniqUQUxFsmY1yZisGc1H_lyoJw5gEOLkFfTFb1EBtz9QirNhYUo5mEztPmuq7_2TTiABvtR_nevK9OEfxR2b8htFierZ3O6kfkE=w827-h1241-s-no-gm?authuser=1`,
+    `https://lh3.googleusercontent.com/pw/AP1GczOFubKq3VkoG8uWrnDTdVrvDHB42V-wb74bY_RdTamZFFnOfmyeRhw94wKdSeWliRVyFoka2TU5nE8uN1qicpXOKivOOCTM9E89Vf0RqhPSXAI9L0T4e4d6vwtcqph_4HizNAsz7YsMMO2LCIB5pqUI=w825-h1241-s-no-gm?authuser=1`,
+    `https://lh3.googleusercontent.com/pw/AP1GczPKXVeC6q8BpolcQf2mT30SusDLSHbIbkijvxfkTVuzRLt2TV_neiXZ0GGdCsYYTqHhkCvtCYafI7ARKkzCEUOW25iBUIYlMkkbDXrVRZpt6ZUH_MADTAp_f9Z5JsN6L-aobXxA1BYo-H_Nu-Pugwzf=w1859-h1241-s-no-gm?authuser=1`,
   ],
 
   /** Images for the Maternity page — add URLs here */
