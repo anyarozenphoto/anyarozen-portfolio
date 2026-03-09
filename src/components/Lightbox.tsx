@@ -69,7 +69,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         src={images[currentIndex]}
         alt=""
         onClick={(e) => e.stopPropagation()}
-        className="select-none"
+        className={`select-none transition-opacity duration-200 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
       />
     </div>
   );
