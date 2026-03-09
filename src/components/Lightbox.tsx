@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface LightboxProps {
@@ -10,6 +10,8 @@ interface LightboxProps {
 }
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -18,6 +20,12 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
     },
     [onClose, onPrev, onNext]
   );
+
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 50);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKey);
@@ -61,7 +69,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         src={images[currentIndex]}
         alt=""
         onClick={(e) => e.stopPropagation()}
-        className="select-none"
+        className={`select-none transition-opacity duration-200 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
       />
     </div>
   );
