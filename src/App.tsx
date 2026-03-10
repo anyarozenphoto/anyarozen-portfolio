@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
-  <BrowserRouter basename="/anyarozen-portfolio">
+  <BrowserRouter>
     <SiteNav />
     <main>
       <Routes>
