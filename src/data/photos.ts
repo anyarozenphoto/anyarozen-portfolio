@@ -16,10 +16,10 @@ export const photos = {
   /** Images for the Portraits page */
   portraits: [
     `${import.meta.env.BASE_URL}images/portraits/black-and-white-portrait-smiling-woman-natural-light.webp`,
-    `${import.meta.env.BASE_URL}images/portraits/black-and-white-skater-thoughtful-urban-portrait.webp`,
     `${import.meta.env.BASE_URL}images/portraits/mirror-reflection-red-dress-portrait-serene.webp`,
     `${import.meta.env.BASE_URL}images/portraits/reflection-portrait-dual-color-artistic.webp`,
     `${import.meta.env.BASE_URL}images/portraits/sunlit-window-portrait-warm-glow-playful.webp`,
+    `${import.meta.env.BASE_URL}images/portraits/black-and-white-skater-thoughtful-urban-portrait.webp`,
   ],
 
   /** Images for the Maternity page */
