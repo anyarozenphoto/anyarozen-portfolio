@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        {/* Добавленное фото */}
+        {/* Блок с фото */}
         <div className="mb-8 max-w-[300px] mx-auto overflow-hidden">
           <img 
             src={`${import.meta.env.BASE_URL}images/contact/anya-rozen-photographer-israel.webp`} 
@@ -11,6 +11,7 @@ const Contact = () => {
           />
         </div>
 
+        {/* Типографика и ссылки */}
         <div className="flex flex-col gap-4 items-center text-foreground/80">
           <a
             href="tel:+972545325540"
