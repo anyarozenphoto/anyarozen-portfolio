@@ -2,11 +2,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        <img
-          src="/images/contact/anya-rozen-photographer.webp"
-          alt="Anya Rozen - photographer based in Israel"
-          className="mx-auto mb-8 w-full max-w-xs sm:max-w-sm md:max-w-md"
-        />
+        
         <div className="flex flex-col gap-4 items-center text-foreground/80">
           
             href="tel:+972545325540"
