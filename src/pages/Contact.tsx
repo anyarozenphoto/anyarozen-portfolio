@@ -3,11 +3,11 @@ const Contact = () => {
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
         {/* Добавленное фото */}
-        <div className="mb-8 max-w-[300px] mx-auto">
+        <div className="mb-8 max-w-[300px] mx-auto overflow-hidden">
           <img 
             src={`${import.meta.env.BASE_URL}images/contact/anya-rozen-photographer-israel.webp`} 
             alt="Anya Rozen - Photographer"
-            className="w-full h-auto"
+            className="w-full h-auto object-cover"
           />
         </div>
 
