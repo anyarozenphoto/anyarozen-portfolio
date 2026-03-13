@@ -13,7 +13,7 @@ export interface NavItem {
   to: string;
   label: string;
   /** Which key in photos to use for the home card image */
-  photosKey?: "portraits" | "maternity" | "families" | "lifestyle";
+  photosKey?: "portraits" | "maternity" | "families" | "explorations";
   /** Hide from navigation and home page cards */
   hidden: boolean;
   /** Never show as a gallery card on home (e.g. About, Contact) */
@@ -25,7 +25,7 @@ export const navigation: NavItem[] = [
   { to: "/portraits", label: "Portraits", photosKey: "portraits", hidden: false },
   { to: "/maternity", label: "Maternity", photosKey: "maternity", hidden: false },
   { to: "/families", label: "Families", photosKey: "families", hidden: true },
-  { to: "/lifestyle", label: "Lifestyle", photosKey: "lifestyle", hidden: false },
+  { to: "/explorations", label: "Explorations", photosKey: "explorations", hidden: false },
   { to: "/about", label: "About", hidden: true, isPage: true },
   { to: "/contact", label: "Contact", hidden: false, isPage: true },
 ];
