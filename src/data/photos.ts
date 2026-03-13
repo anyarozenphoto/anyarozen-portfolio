@@ -1,5 +1,5 @@
 // =============================================
-// 📷 PHOTO DATA — edit this file to manage all images on the site
+// PHOTO DATA — edit this file to manage all images on the site
 // =============================================
 //
 // HOW TO ADD A NEW PAGE:
