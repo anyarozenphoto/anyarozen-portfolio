@@ -8,7 +8,7 @@ const Maternity = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // В массиве могут быть строки или объекты { src, alt }
-  const items = photos.maternity;
+  const items = photos.maternity || [];
 
   const getSrc = (item: string | { src: string; alt?: string }) =>
     typeof item === "string" ? item : item.src;
@@ -17,8 +17,6 @@ const Maternity = () => {
     typeof item === "string"
       ? "Maternity photograph by Anya Rozen"
       : item.alt || "Maternity photograph by Anya Rozen";
-
-  const images = items.map((item) => getSrc(item));
 
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
@@ -36,7 +34,7 @@ const Maternity = () => {
 
             return (
               <div
-                key={src}
+                key={`${src}-${i}`}
                 className="cursor-pointer overflow-hidden group"
                 onClick={() => setLightboxIndex(i)}
               >
@@ -54,16 +52,16 @@ const Maternity = () => {
 
       {lightboxIndex !== null && (
         <Lightbox
-          images={images}
+          images={items} // Передаем исходные объекты для поддержки alt
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onPrev={() =>
             setLightboxIndex(
-              (lightboxIndex - 1 + images.length) % images.length,
+              (lightboxIndex - 1 + items.length) % items.length,
             )
           }
           onNext={() =>
-            setLightboxIndex((lightboxIndex + 1) % images.length)
+            setLightboxIndex((lightboxIndex + 1) % items.length)
           }
         />
       )}
