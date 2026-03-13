@@ -1,3 +1,4 @@
+// Explorations / Personal works gallery
 import { useState } from "react";
 import { photos } from "@/data/photos";
 import { useFadeIn } from "@/hooks/useFadeIn";
