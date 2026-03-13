@@ -1,7 +1,6 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-// Определяем тип для картинки: это может быть просто строка или объект с описанием
 type LightboxImage = string | { src: string; alt?: string };
 
 interface LightboxProps {
@@ -14,6 +13,11 @@ interface LightboxProps {
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) => {
   const [fadeKey, setFadeKey] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  // Минимальное расстояние для свайпа (в пикселях)
+  const minSwipeDistance = 50;
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -37,33 +41,65 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
     };
   }, [handleKey]);
 
-  // Вспомогательные функции для извлечения данных из текущего элемента
+  // Обработка начала касания
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  // Обработка движения пальца
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  // Обработка завершения касания
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      onNext();
+    } else if (isRightSwipe) {
+      onPrev();
+    }
+  };
+
   const currentItem = images[currentIndex];
   const src = typeof currentItem === "string" ? currentItem : currentItem.src;
   const alt = typeof currentItem === "string" ? "" : currentItem.alt || "";
 
   return (
-    <div className="lightbox-overlay active" onClick={onClose}>
+    <div 
+      className="lightbox-overlay active" 
+      onClick={onClose}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <button
         onClick={(e) => { e.stopPropagation(); onClose(); }}
-        className="absolute top-6 right-6 text-primary-foreground/70 hover:text-primary-foreground transition-colors z-10"
+        className="absolute top-6 right-6 text-primary-foreground/70 hover:text-primary-foreground transition-colors z-50"
         aria-label="Close"
       >
         <X size={28} />
       </button>
 
+      {/* Стрелки скрываем на мобилках через md:flex, так как там есть свайп */}
       {images.length > 1 && (
         <>
           <button
             onClick={(e) => { e.stopPropagation(); onPrev(); }}
-            className="absolute left-0 top-20 h-[calc(100%-5rem)] w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
+            className="hidden md:flex absolute left-0 top-20 h-[calc(100%-5rem)] w-24 items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
             aria-label="Previous"
           >
             <ChevronLeft size={40} />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); onNext(); }}
-            className="absolute right-0 top-20 h-[calc(100%-5rem)] w-16 md:w-24 flex items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
+            className="hidden md:flex absolute right-0 top-20 h-[calc(100%-5rem)] w-24 items-center justify-center text-primary-foreground/50 hover:text-primary-foreground transition-colors z-10"
             aria-label="Next"
           >
             <ChevronRight size={40} />
@@ -76,7 +112,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         src={src}
         alt={alt}
         onClick={(e) => e.stopPropagation()}
-        className="select-none animate-fade-in"
+        className="select-none animate-fade-in touch-none"
       />
     </div>
   );
