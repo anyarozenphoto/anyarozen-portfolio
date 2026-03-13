@@ -8,8 +8,14 @@ const Index = () => {
 
   // Gallery cards: only visible, non-page items that have photos
   const galleryCards = navigation.filter(
-    (n) => !n.hidden && !n.isPage && n.photosKey && photos[n.photosKey].length > 0
+    (n) => !n.hidden && !n.isPage && n.photosKey && photos[n.photosKey] && photos[n.photosKey].length > 0
   );
+
+  // Функция для безопасного получения пути к картинке (как в мастер-файле)
+  const getSrc = (item: any) => {
+    if (!item) return "";
+    return typeof item === "string" ? item : item.src;
+  };
 
   return (
     <div ref={ref}>
@@ -27,25 +33,31 @@ const Index = () => {
       <section className="px-3 md:px-6 py-12 md:py-16">
         <div className="max-w-[1600px] mx-auto">
           <div className="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-3">
-            {galleryCards.map((card) => (
-              <Link
-                key={card.to}
-                to={card.to}
-                className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden group"
-              >
-                <img
-                  src={photos[card.photosKey!][0]}
-                  alt={card.label}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-end p-6 md:p-10">
-                  <h2 className="font-sans text-sm md:text-base tracking-[0.1em] uppercase text-white">
-                    {card.label}
-                  </h2>
-                </div>
-              </Link>
-            ))}
+            {galleryCards.map((card) => {
+              // Берем первый элемент из массива соответствующей категории
+              const firstItem = photos[card.photosKey!][0];
+              const imageSrc = getSrc(firstItem);
+
+              return (
+                <Link
+                  key={card.to}
+                  to={card.to}
+                  className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden group"
+                >
+                  <img
+                    src={imageSrc}
+                    alt={card.label}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex items-end p-6 md:p-10">
+                    <h2 className="font-sans text-sm md:text-base tracking-[0.1em] uppercase text-white">
+                      {card.label}
+                    </h2>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
