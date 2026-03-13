@@ -6,30 +6,36 @@ import { navigation } from "@/data/navigation";
 const Index = () => {
   const ref = useFadeIn();
 
-  // Gallery cards: only visible, non-page items that have photos
+  // Фильтруем пункты меню для отображения карточек на главной
   const galleryCards = navigation.filter(
     (n) => !n.hidden && !n.isPage && n.photosKey && photos[n.photosKey] && photos[n.photosKey].length > 0
   );
 
-  // Функция для безопасного получения пути к картинке (как в мастер-файле)
+  // Функция для безопасного получения пути к картинке (поддерживает и строку, и объект)
   const getSrc = (item: any) => {
     if (!item) return "";
     return typeof item === "string" ? item : item.src;
   };
 
+  // Функция для безопасного получения alt-текста
+  const getAlt = (item: any, fallback: string) => {
+    if (!item || typeof item === "string") return fallback;
+    return item.alt || fallback;
+  };
+
   return (
     <div ref={ref}>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <img
-          src={photos.hero}
-          alt=""
+          src={getSrc(photos.hero)} // Исправлено: используем getSrc
+          alt={getAlt(photos.hero, "Anya Rozen Photography")} // Исправлено: используем getAlt
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-foreground/10" />
       </section>
 
-      {/* Gallery Links */}
+      {/* Gallery Links (Карточки разделов) */}
       <section className="px-3 md:px-6 py-12 md:py-16">
         <div className="max-w-[1600px] mx-auto">
           <div className="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -37,6 +43,7 @@ const Index = () => {
               // Берем первый элемент из массива соответствующей категории
               const firstItem = photos[card.photosKey!][0];
               const imageSrc = getSrc(firstItem);
+              const imageAlt = getAlt(firstItem, card.label);
 
               return (
                 <Link
@@ -46,7 +53,7 @@ const Index = () => {
                 >
                   <img
                     src={imageSrc}
-                    alt={card.label}
+                    alt={imageAlt}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors duration-500" />
