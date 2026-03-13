@@ -1,5 +1,5 @@
 // =============================================
-// 🧭 NAVIGATION — controls which pages appear in menus & home cards
+// NAVIGATION — controls which pages appear in menus & home cards
 // =============================================
 //
 // HOW TO SHOW/HIDE A PAGE:
