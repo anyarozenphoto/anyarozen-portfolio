@@ -3,10 +3,10 @@ import { photos } from "@/data/photos";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import Lightbox from "@/components/Lightbox";
 
-const Lifestyle = () => {
+const Explorations = () => {
   const ref = useFadeIn();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const images = photos.lifestyle;
+  const images = photos.explorations;
 
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
@@ -40,4 +40,4 @@ const Lifestyle = () => {
   );
 };
 
-export default Lifestyle;
+export default Explorations;
