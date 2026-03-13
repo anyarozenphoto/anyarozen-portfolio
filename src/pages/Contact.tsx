@@ -2,15 +2,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        
         <div className="flex flex-col gap-4 items-center text-foreground/80">
-          
+          <a
             href="tel:+972545325540"
             className="text-sm tracking-wide hover:text-foreground transition-colors"
           >
             +972-545325540
           </a>
-          
+          <a
             href="mailto:anyarozenphoto@gmail.com"
             className="text-sm tracking-wide hover:text-foreground transition-colors"
           >
@@ -26,7 +25,7 @@ const Contact = () => {
             </a>
             <span className="text-foreground/30">·</span>
             <a href="https://wa.me/972545325540" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              WhatsApp
+              Whatsapp
             </a>
           </div>
         </div>
