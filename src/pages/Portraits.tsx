@@ -8,10 +8,10 @@ const Portraits = () => {
   const ref = useFadeIn();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  // 1. Берем исходные данные
+  // 1. Берем исходные данные (могут быть строками или объектами)
   const items = photos.portraits || [];
 
-  // 2. Ультра-безопасная функция получения пути
+  // 2. Функции для безопасного получения данных
   const getSrc = (item: any) => {
     if (!item) return "";
     return typeof item === "string" ? item : item.src;
@@ -21,9 +21,6 @@ const Portraits = () => {
     if (typeof item === "object" && item?.alt) return item.alt;
     return "Portrait photograph by Anya Rozen";
   };
-
-  // 3. Массив СТРОК для лайтбокса
-  const images = items.map((item) => getSrc(item));
 
   return (
     <div ref={ref} className="pt-16 md:pt-24 pb-16 px-3 md:px-6 min-h-screen">
@@ -39,11 +36,11 @@ const Portraits = () => {
             const src = getSrc(item);
             const alt = getAlt(item);
 
-            if (!src) return null; // Защита от пустых элементов
+            if (!src) return null;
 
             return (
               <div
-                key={`${src}-${i}`} // Используем и src, и индекс для уникальности
+                key={`${src}-${i}`}
                 className="cursor-pointer overflow-hidden group"
                 onClick={() => setLightboxIndex(i)}
               >
@@ -61,11 +58,13 @@ const Portraits = () => {
 
       {lightboxIndex !== null && (
         <Lightbox
-          images={images}
+          images={items} // Передаем исходные объекты, чтобы Lightbox видел alt
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
-          onPrev={() => setLightboxIndex((lightboxIndex - 1 + images.length) % images.length)}
-          onNext={() => setLightboxIndex((lightboxIndex + 1) % images.length)}
+          onPrev={() =>
+            setLightboxIndex((lightboxIndex - 1 + items.length) % items.length)
+          }
+          onNext={() => setLightboxIndex((lightboxIndex + 1) % items.length)}
         />
       )}
     </div>
