@@ -15,7 +15,10 @@ export const photos = {
 
   /** Images for the Portraits page */
   portraits: [
-    `${import.meta.env.BASE_URL}images/portraits/portrait-long-hair-soft-lighting-natural-beauty.webp`,
+    {
+    src: `${import.meta.env.BASE_URL}images/portraits/portrait-long-hair-soft-lighting-natural-beauty.webp`,
+    alt: "Portrait of a woman with long straight brown hair in soft lighting, natural beauty and calm expression against a dark background",
+  },
     `${import.meta.env.BASE_URL}images/portraits/black-and-white-portrait-smiling-woman-natural-light.webp`,
     `${import.meta.env.BASE_URL}images/portraits/mirror-reflection-red-dress-portrait-serene.webp`,
     `${import.meta.env.BASE_URL}images/portraits/reflection-portrait-dual-color-artistic.webp`,
