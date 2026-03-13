@@ -1,8 +1,11 @@
 import { useEffect, useCallback, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
+// Определяем тип для картинки: это может быть просто строка или объект с описанием
+type LightboxImage = string | { src: string; alt?: string };
+
 interface LightboxProps {
-  images: string[];
+  images: LightboxImage[];
   currentIndex: number;
   onClose: () => void;
   onPrev: () => void;
@@ -33,6 +36,11 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
       document.body.style.overflow = "";
     };
   }, [handleKey]);
+
+  // Вспомогательные функции для извлечения данных из текущего элемента
+  const currentItem = images[currentIndex];
+  const src = typeof currentItem === "string" ? currentItem : currentItem.src;
+  const alt = typeof currentItem === "string" ? "" : currentItem.alt || "";
 
   return (
     <div className="lightbox-overlay active" onClick={onClose}>
@@ -65,8 +73,8 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
 
       <img
         key={fadeKey}
-        src={images[currentIndex]}
-        alt=""
+        src={src}
+        alt={alt}
         onClick={(e) => e.stopPropagation()}
         className="select-none animate-fade-in"
       />
