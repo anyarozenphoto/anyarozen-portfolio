@@ -1,5 +1,5 @@
 // src/components/ScrollToTop.tsx
-// This component makes the window scroll to the top
+// This component scrolls the window to the top
 // every time the route (pathname) changes.
 
 import { useEffect } from "react";
@@ -9,15 +9,14 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to the very top on every route change
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "instant", // no animation for predictable UX
+      behavior: "auto", // no animation to avoid weird mid‑scroll states
     });
   }, [pathname]);
 
-  // This component doesn't render anything in the DOM
+  // Nothing to render
   return null;
 };
 
