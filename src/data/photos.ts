@@ -52,10 +52,6 @@ export const photos = {
       alt: "Tender maternity portrait of a pregnant woman holding a delicate gypsophila bouquet",
     },
     {
-      src: `${import.meta.env.BASE_URL}images/maternity/pregnant-belly-gypsophila-flowers-close-up-maternity.webp`,
-      alt: "Close-up of pregnant belly held gently with both hands, holding a small bouquet of white gypsophila flowers",
-    },
-    {
       src: `${import.meta.env.BASE_URL}images/maternity/pregnancy-glowing-serene-portrait-bokeh-lights.webp`,
       alt: "Serene and glowing pregnancy portrait featuring beautiful bokeh lights background",
     },
