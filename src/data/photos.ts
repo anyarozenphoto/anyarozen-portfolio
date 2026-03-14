@@ -45,15 +45,35 @@ export const photos = {
   },
 ],
 
- /** Images for the Maternity page */
+/** Images for the Maternity page */
   maternity: [
     {
       src: `${import.meta.env.BASE_URL}images/maternity/pregnancy-gypsophila-bouquet-tender-portrait.webp`,
       alt: "Tender maternity portrait of a pregnant woman holding a delicate gypsophila bouquet",
     },
     {
+      src: `${import.meta.env.BASE_URL}images/maternity/pregnant-belly-gypsophila-flowers-close-up-maternity.webp`,
+      alt: "Close-up of pregnant belly held gently with both hands, holding a small bouquet of white gypsophila flowers",
+    },
+    {
       src: `${import.meta.env.BASE_URL}images/maternity/pregnancy-glowing-serene-portrait-bokeh-lights.webp`,
       alt: "Serene and glowing pregnancy portrait featuring beautiful bokeh lights background",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/maternity/maternity-photo-iridescent-light-streaks-white-shirt.webp`,
+      alt: "Pregnant woman posing in white shirt with colorful iridescent light streaks, artistic maternity portrait",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/maternity/maternity-photoshoot-bokeh-lights-white-shirt-profile.webp`,
+      alt: "Pregnant woman in open white shirt holding her belly, profile pose with warm golden bokeh background",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/maternity/maternity-portrait-white-shirt-light-flares-studio.webp`,
+      alt: "Pregnant woman in white shirt standing with arms crossed, surrounded by soft rainbow light flares in studio",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}images/maternity/pregnancy-studio-portrait-glowing-bokeh-white-outfit.webp`,
+      alt: "Pregnant woman with long hair cradling baby bump in white shirt, soft glowing bokeh lights background",
     },
     {
       src: `${import.meta.env.BASE_URL}images/maternity/pregnancy-sunflower-bouquet-portrait-serene.webp`,
