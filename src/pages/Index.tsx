@@ -1,3 +1,6 @@
+// src/pages/Index.tsx
+
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { photos } from "@/data/photos";
 import { useFadeIn } from "@/hooks/useFadeIn";
@@ -6,41 +9,72 @@ import { navigation } from "@/data/navigation";
 const Index = () => {
   const ref = useFadeIn();
 
-  // Фильтруем пункты меню для отображения карточек на главной
+  // Ref for the gallery section (cards) that we want to scroll to
+  const galleryRef = useRef<HTMLElement | null>(null);
+
+  // Filter navigation items to show gallery cards on the homepage
   const galleryCards = navigation.filter(
-    (n) => !n.hidden && !n.isPage && n.photosKey && photos[n.photosKey] && photos[n.photosKey].length > 0
+    (n) =>
+      !n.hidden &&
+      !n.isPage &&
+      n.photosKey &&
+      photos[n.photosKey] &&
+      photos[n.photosKey].length > 0
   );
 
-  // Функция для безопасного получения пути к картинке (поддерживает и строку, и объект)
+  // Helper to safely get image src (supports both string and object)
   const getSrc = (item: any) => {
     if (!item) return "";
     return typeof item === "string" ? item : item.src;
   };
 
-  // Функция для безопасного получения alt-текста
+  // Helper to safely get alt text
   const getAlt = (item: any, fallback: string) => {
     if (!item || typeof item === "string") return fallback;
     return item.alt || fallback;
   };
 
+  // Scroll from hero to the gallery section
+  const handleHeroScroll = () => {
+    if (galleryRef.current) {
+      galleryRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div ref={ref}>
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
+      {/* We make the whole hero clickable/hoverable to trigger scroll, similar to Chihiro */}
+      <section
+        className="relative h-screen w-full overflow-hidden cursor-pointer group"
+        onClick={handleHeroScroll}
+        // you can also add onMouseEnter if you ever want auto-scroll on hover,
+        // but click is more user‑friendly:
+        // onMouseEnter={handleHeroScroll}
+      >
         <img
-          src={getSrc(photos.hero)} // Исправлено: используем getSrc
-          alt={getAlt(photos.hero, "Anya Rozen Photography")} // Исправлено: используем getAlt
+          src={getSrc(photos.hero)}
+          alt={getAlt(photos.hero, "Anya Rozen Photography")}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-foreground/10" />
+
+        {/* SCROLL label like on Chihiro */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] uppercase text-white/80 group-hover:text-white transition-colors">
+          SCROLL
+        </div>
       </section>
 
-      {/* Gallery Links (Карточки разделов) */}
-      <section className="px-3 md:px-6 py-12 md:py-16">
+      {/* Gallery Links (Cards sections) */}
+      {/* This is the target section we scroll to from the hero */}
+      <section
+        ref={galleryRef}
+        className="px-3 md:px-6 py-12 md:py-16"
+      >
         <div className="max-w-[1600px] mx-auto">
           <div className="fade-in-section grid grid-cols-1 md:grid-cols-2 gap-3">
             {galleryCards.map((card) => {
-              // Берем первый элемент из массива соответствующей категории
+              // Take the first photo from the corresponding category
               const firstItem = photos[card.photosKey!][0];
               const imageSrc = getSrc(firstItem);
               const imageAlt = getAlt(firstItem, card.label);
