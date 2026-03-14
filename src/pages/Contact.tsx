@@ -5,7 +5,9 @@
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
+    // Removed vertical centering with items-center + min-h-screen alone.
+    // Instead, we use min-h-screen + top padding to avoid overlap with the fixed header.
+    <div className="min-h-screen px-6 pt-28 md:pt-32 pb-16">
       {/* Responsive layout:
          - on mobile: text first, image below
          - on desktop: image and text side by side
