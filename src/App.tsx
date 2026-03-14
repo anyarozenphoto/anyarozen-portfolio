@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
+import ScrollToTop from "./components/ScrollToTop"; // <- added
 import Index from "./pages/Index";
 import Portraits from "./pages/Portraits";
 import Maternity from "./pages/Maternity";
@@ -13,6 +14,8 @@ import NotFound from "./pages/NotFound";
 
 const App = () => (
   <BrowserRouter>
+    {/* Ensures we always start from the top on each route change */}
+    <ScrollToTop />
     <SiteNav />
     <main>
       <Routes>
